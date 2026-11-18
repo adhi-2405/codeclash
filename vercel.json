@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/admin", "destination": "/backup/index.html" },
+    { "source": "/style.css", "destination": "/backup/style.css" },
+    { "source": "/questions.js", "destination": "/backup/questions.js" },
+    { "source": "/script.js", "destination": "/backup/script.js" },
+    { "source": "/standalone.html", "destination": "/backup/standalone.html" },
+    { "source": "/(.*)", "destination": "/backup/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ]
+}
